@@ -1,5 +1,8 @@
 # Frappe Test Runner
 
+
+![Peek 2022-10-26 15-40](https://user-images.githubusercontent.com/9079960/198000054-650ef639-ac9c-4cff-a202-459d14d6352f.gif)
+
 This extension lets you run tests from Frappe app using single command or keybind.
 
 Supported test runs:
