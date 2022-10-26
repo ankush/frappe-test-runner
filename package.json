@@ -15,7 +15,7 @@
     "main": "./out/extension.js",
     "contributes": {
         "configuration": {
-            "title": "FrappeTestRunner",
+            "title": "Frappe Test Runner",
             "properties": {
                 "frappeTestRunner.siteName": {
                     "type": "string",
