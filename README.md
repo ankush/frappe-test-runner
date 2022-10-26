@@ -25,5 +25,5 @@ Checkout the [vim plugin](https://github.com/ankush/frappe_test.vim) instead.
 
 ## Credit
 
-- This is heavily inspired by [Django Test Runner](https://github.com/christherama/django-test-runner) and reuses same some code from it.
+- This is heavily inspired by [Django Test Runner](https://github.com/christherama/django-test-runner) and reuses some code from it.
 
