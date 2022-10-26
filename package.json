@@ -16,6 +16,7 @@
     "contributes": {
         "configuration": {
             "title": "Frappe Test Runner",
+            "icon": "./assets/ftr_logo.png",
             "properties": {
                 "frappeTestRunner.siteName": {
                     "type": "string",
