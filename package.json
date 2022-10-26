@@ -1,8 +1,10 @@
 {
     "name": "frappe-test-runner",
-    "displayName": "frappe-test-runner",
+    "displayName": "Frappe Test Runner",
     "description": "Run Frappe tests quickly",
-    "version": "0.0.1",
+    "version": "0.0.2",
+    "publisher": "AnkushMenat",
+    "repository": "https://github.com/ankush/frappe-test-runner",
     "engines": {
         "vscode": "^1.72.0"
     },
@@ -35,6 +37,16 @@
             {
                 "command": "frappe-test-runner.runSingleTest",
                 "title": "Frappe Test Runner: Run nearest test"
+            }
+        ],
+        "keybindings": [
+            {
+                "command": "frappe-test-runner.runAllTests",
+                "when": "editorTextFocus"
+            },
+            {
+                "command": "frappe-test-runner.runSingleTest",
+                "when": "editorTextFocus"
             }
         ]
     },

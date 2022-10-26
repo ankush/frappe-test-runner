@@ -7,11 +7,16 @@ Supported test runs:
 - Run nearest test to the cursor
 
 
+# Setup
+
+- Configure `frappeTestRunner.siteName` in settings. This site will be used by bench to run tests on.
+
 ## Usage
 
-Ctrl+shift+p > run nearest or run all.
+- Ctrl+shift+p > run nearest or run all.
+- Alternatively setup keyboard shortcuts from settings. Note: keyboard shortcuts are not setup by default.
 
-## Vim users?
+## Vim user?
 
 Checkout the [vim plugin](https://github.com/ankush/frappe_test.vim) instead.
 
