@@ -1,0 +1,62 @@
+{
+    "name": "frappe-test-runner",
+    "displayName": "frappe-test-runner",
+    "description": "Run Frappe tests quickly",
+    "version": "0.0.1",
+    "engines": {
+        "vscode": "^1.72.0"
+    },
+    "activationEvents": [
+        "onCommand:frappe-test-runner.runAllTests",
+        "onCommand:frappe-test-runner.runSingleTest"
+    ],
+    "main": "./out/extension.js",
+    "contributes": {
+        "configuration": {
+            "title": "FrappeTestRunner",
+            "properties": {
+                "frappeTestRunner.siteName": {
+                    "type": "string",
+                    "default": "frappe.localhost",
+                    "description": "Name of frappe site to run tests on"
+                },
+                "frappeTestRunner.testArgs": {
+                    "type": "string",
+                    "default": "",
+                    "description": "Pass extra arguments to test runner like --skip-before-tests"
+                }
+            }
+        },
+        "commands": [
+            {
+                "command": "frappe-test-runner.runAllTests",
+                "title": "Frappe Test Runner: Run all tests"
+            },
+            {
+                "command": "frappe-test-runner.runSingleTest",
+                "title": "Frappe Test Runner: Run nearest test"
+            }
+        ]
+    },
+    "scripts": {
+        "vscode:prepublish": "npm run compile",
+        "compile": "tsc -p ./",
+        "watch": "tsc -watch -p ./",
+        "pretest": "npm run compile && npm run lint",
+        "lint": "eslint src --ext ts",
+        "test": "node ./out/test/runTest.js"
+    },
+    "devDependencies": {
+        "@types/vscode": "^1.72.0",
+        "@types/glob": "^8.0.0",
+        "@types/mocha": "^10.0.0",
+        "@types/node": "16.x",
+        "@typescript-eslint/eslint-plugin": "^5.38.1",
+        "@typescript-eslint/parser": "^5.38.1",
+        "eslint": "^8.24.0",
+        "glob": "^8.0.3",
+        "mocha": "^10.0.0",
+        "typescript": "^4.8.4",
+        "@vscode/test-electron": "^2.1.5"
+    }
+}
