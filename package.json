@@ -13,10 +13,10 @@
         "onCommand:frappe-test-runner.runSingleTest"
     ],
     "main": "./out/extension.js",
+    "icon": "assets/ftr_logo.png",
     "contributes": {
         "configuration": {
             "title": "Frappe Test Runner",
-            "icon": "./assets/ftr_logo.png",
             "properties": {
                 "frappeTestRunner.siteName": {
                     "type": "string",
