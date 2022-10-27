@@ -2,7 +2,7 @@
     "name": "frappe-test-runner",
     "displayName": "Frappe Test Runner",
     "description": "Run Frappe tests quickly",
-    "version": "0.0.2",
+    "version": "0.1.0",
     "publisher": "AnkushMenat",
     "repository": "https://github.com/ankush/frappe-test-runner",
     "engines": {
