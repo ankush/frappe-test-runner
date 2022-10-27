@@ -15,7 +15,8 @@
     "main": "./out/extension.js",
     "contributes": {
         "configuration": {
-            "title": "FrappeTestRunner",
+            "title": "Frappe Test Runner",
+            "icon": "./assets/ftr_logo.png",
             "properties": {
                 "frappeTestRunner.siteName": {
                     "type": "string",
