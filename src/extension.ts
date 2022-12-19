@@ -44,37 +44,47 @@ export function activate(context: vscode.ExtensionContext) {
 }
 
 function getBaseTestCommand(): string | undefined {
-    const testModule = getTestModule();
+
+    const config = vscode.workspace.getConfiguration("frappeTestRunner");
+    const testModule = getTestModule(config.get("workspaceRoot"));
     if (!testModule) {
         return;
     }
+
     // Run module tests in terminal
-    const config = vscode.workspace.getConfiguration("frappeTestRunner");
     const siteName = config.get("siteName");
     const testArgs = config.get("testArgs") ?? "";
     return `bench --site ${siteName} run-tests --module ${testModule} ${testArgs}`;
 }
 
-function getTestModule(): string | undefined {
+function getTestModule(userWorkspaceRoot: string): string | undefined {
+
     const workspaceRoot = vscode.workspace.rootPath;
     if (!workspaceRoot) {
         console.log("No root path");
         return;
     }
-    const editor = vscode.window.activeTextEditor;
 
+    const editor = vscode.window.activeTextEditor;
     const filePath = editor?.document.fileName;
     if (!editor || !filePath) {
         console.log("No editor open");
         return;
     }
+
+    let workspacePostfix = userWorkspaceRoot === "bench" ? "apps/" : "";
     const filePathRelativeToWorkspace = filePath.replace(
-        `${workspaceRoot}/`,
+        `${workspaceRoot}/` + workspacePostfix,
         ""
     );
-    const testModule = filePathRelativeToWorkspace
-        .replace(".py", "")
-        .replace(/\//g, ".");
+
+    // if not app folder, trim first app name from test dir
+    let testModule = filePathRelativeToWorkspace;
+    if (userWorkspaceRoot === "bench" || userWorkspaceRoot === "apps"){
+        testModule = testModule.substring(testModule.indexOf("/") + 1);
+    }
+
+    testModule = testModule.replace(".py", "").replace(/\//g, ".");
 
     return testModule;
 }
