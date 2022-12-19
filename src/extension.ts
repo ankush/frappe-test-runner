@@ -57,7 +57,7 @@ function getBaseTestCommand(): string | undefined {
     return `bench --site ${siteName} run-tests --module ${testModule} ${testArgs}`;
 }
 
-function getTestModule(userWorkspaceRoot: string): string | undefined {
+function getTestModule(userWorkspaceRoot: string | undefined): string | undefined {
 
     const workspaceRoot = vscode.workspace.rootPath;
     if (!workspaceRoot) {
