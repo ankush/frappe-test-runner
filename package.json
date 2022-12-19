@@ -23,6 +23,12 @@
                     "default": "frappe.localhost",
                     "description": "Name of frappe site to run tests on"
                 },
+                "frappeTestRunner.workspaceRoot": {
+                    "type": ["string"],
+                    "default": "single-app",
+                    "enum": ["single-app", "apps", "bench"],
+                    "description": "Set your Workspace root. Default assumes Workspace root is test app directory"
+                },
                 "frappeTestRunner.testArgs": {
                     "type": "string",
                     "default": "",

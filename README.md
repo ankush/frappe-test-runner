@@ -14,6 +14,10 @@ Supported ways to run tests:
 # Setup
 
 - Configure `frappeTestRunner.siteName` in settings. This site will be used by bench to run tests on.
+- If your Workspace root directory is not the app directory, also configure `frappeTestRunner.workspaceRoot` accordingly:
+  - `bench`: If your Workspace root directory is the same as the bench root directory
+  - `apps`: If your Workspace root directory is the "apps" folder
+  - `single-app`: Default. If your Workspace root directory is the app directory
 
 ## Usage
 
