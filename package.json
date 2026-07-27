@@ -20,8 +20,8 @@
             "properties": {
                 "frappeTestRunner.siteName": {
                     "type": "string",
-                    "default": "frappe.localhost",
-                    "description": "Name of frappe site to run tests on"
+                    "default": "",
+                    "description": "Name of frappe site to run tests on. Leave empty to use the default site."
                 },
                 "frappeTestRunner.testArgs": {
                     "type": "string",

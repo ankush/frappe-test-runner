@@ -52,7 +52,8 @@ function getBaseTestCommand(): string | undefined {
     const config = vscode.workspace.getConfiguration("frappeTestRunner");
     const siteName = config.get("siteName");
     const testArgs = config.get("testArgs") ?? "";
-    return `bench --site ${siteName} run-tests --module ${testModule} ${testArgs}`;
+    const siteArg = siteName ? `--site ${siteName} ` : "";
+    return `bench ${siteArg}run-tests --module ${testModule} ${testArgs}`;
 }
 
 function getTestModule(): string | undefined {
